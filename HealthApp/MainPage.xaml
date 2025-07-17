@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="happy_poop_emoji.png"
+                HeightRequest="135"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+
+            <Label
+                Text="Health App!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="For helping out with Crohns ;-)"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <!--Food Selection-->
+            <Button
+                x:Name="EnterFood"
+                Text="Food"
+                SemanticProperties.Hint="Takes count of eaten food"
+                Clicked="EnterFood_Clicked"
+                HorizontalOptions="Fill" />
+
+            <!--Drink-->
+            <Button
+                x:Name="EnterDrink"
+                Text="Drink" 
+                SemanticProperties.Hint="Takes count of liquids"
+                Clicked="EnterDrink_Clicked"
+                HorizontalOptions="Fill" />
+            
+            <!--Toilet-->
+            <Button
+                x:Name="StoolType"
+                Text="Poop" 
+                SemanticProperties.Hint="Records type of stool"
+                Clicked="StoolType_Clicked"
+                HorizontalOptions="Fill" />
+            
+            <!--Acid-->
+            <Button
+                x:Name="AcidRecorder"
+                Text="Acid / Heartburn" 
+                SemanticProperties.Hint="Records indigestion"
+                Clicked="AcidRecorder_Clicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="Other"
+                Text="Other" 
+                SemanticProperties.Hint="Something I want to record"
+                Clicked="Other_Clicked"
+                HorizontalOptions="Fill" />
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

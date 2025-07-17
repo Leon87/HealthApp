@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="HealthApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:HealthApp"
+    Shell.FlyoutBehavior="Flyout"
+    Title="HealthApp">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Food"
+        ContentTemplate="{DataTemplate local:Food}"
+        Route="Food" />
+    <ShellContent
+        Title="Drink"
+        ContentTemplate="{DataTemplate local:Drink}"
+        Route="Drink" />
+    <ShellContent
+        Title="Acid"
+        ContentTemplate="{DataTemplate local:Acid}"
+        Route="Acid" />
+    <ShellContent
+        Title="Poop"
+        ContentTemplate="{DataTemplate local:Poop}"
+        Route="Poop" />
+    <ShellContent
+        Title="Other"
+        ContentTemplate="{DataTemplate local:Other}"
+        Route="Other" />
+    <ShellContent
+        Title="About Us"
+        ContentTemplate="{DataTemplate local:About}"
+        Route="About" />
+
+</Shell>
