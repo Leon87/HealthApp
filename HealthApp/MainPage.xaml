@@ -56,6 +56,14 @@
                 Clicked="AcidRecorder_Clicked"
                 HorizontalOptions="Fill" />
 
+            <!--Meds-->
+            <Button
+                x:Name="Medication"
+                Text="Medication" 
+                SemanticProperties.Hint="Records Meds taken"
+                Clicked="Medication_Clicked"
+                HorizontalOptions="Fill" />
+
             <Button
                 x:Name="Other"
                 Text="Other" 
