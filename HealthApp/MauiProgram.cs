@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using HealthApp.Shared;
+using Microsoft.Extensions.Logging;
 
 namespace HealthApp
 {
@@ -16,9 +17,10 @@ namespace HealthApp
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
+            builder.Services.AddSingleton<SqlLiteConnectionFactory>();
             return builder.Build();
         }
     }
