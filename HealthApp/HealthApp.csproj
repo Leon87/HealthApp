@@ -79,9 +79,6 @@
 	  <MauiXaml Update="ContentPages\Food.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Medication.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="ContentPages\Other.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
