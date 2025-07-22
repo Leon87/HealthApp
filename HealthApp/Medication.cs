@@ -5,6 +5,7 @@ public class Medication : ContentPage
     public Medication()
     {
         var myGrid = new Grid();
+        myGrid.HorizontalOptions = LayoutOptions.Center;
         var columnSize = 2;
 
         var modals = new List<TempModal>{
@@ -25,7 +26,7 @@ public class Medication : ContentPage
         };
 
         var itemCounter = 0;
-        var howWideTheColumnIs = DeviceDisplay.Current.MainDisplayInfo.Width / 125 * 100 / 2;
+        var howWideTheColumnIs = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density / 2 - 10;
 
         for (var i = 0; i < columnSize; i++)
         {
@@ -44,9 +45,10 @@ public class Medication : ContentPage
         {
             Button button = new();
             button.Text = modals[i].Name;
+            button.FontSize = 16;
             button.WidthRequest = howWideTheColumnIs - 5;
             button.Padding = 5;
-            button.Margin = 5;
+            button.Margin = 10;
 
 
             var column = 0;
