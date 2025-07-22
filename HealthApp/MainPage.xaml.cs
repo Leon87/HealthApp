@@ -2,7 +2,6 @@
 {
     public partial class MainPage : ContentPage
     {
-
         public MainPage()
         {
             InitializeComponent();
@@ -36,6 +35,11 @@
         private async void EnterFood_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Food());
+        }
+
+        private async void Medication_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Medication());
         }
     }
 
