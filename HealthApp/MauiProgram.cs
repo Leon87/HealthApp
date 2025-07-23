@@ -21,6 +21,8 @@ namespace HealthApp
 #endif
 
             builder.Services.AddSingleton<SqlLiteConnectionFactory>();
+            builder.Services.AddSingleton<IAppSettings, AppSettings>();
+
             return builder.Build();
         }
     }

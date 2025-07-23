@@ -22,7 +22,6 @@ namespace HealthApp
         protected override async void OnStart()
         {
             ISQLiteAsyncConnection database = _connectionFactory.CreateConnection();
-
             await database.CreateTableAsync<FoodDto>();
 
             base.OnStart();
