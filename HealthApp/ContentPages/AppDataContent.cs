@@ -4,11 +4,12 @@ using HealthApp.Shared;
 
 namespace HealthApp.ContentPages;
 
-public class AppDataContent : ContentPage
+public partial class AppDataContent : ContentPage
 {
     private readonly IAppSettings _settings;
     private readonly SqlLiteConnectionFactory _connectionFactory;
     private readonly DataCrudOperations _dataCrudOperations;
+
     public AppDataContent(IAppSettings settings, SqlLiteConnectionFactory connectionFactory, DataCrudOperations dataCrudOperations)
     {
         _settings = settings;
@@ -38,9 +39,7 @@ public class AppDataContent : ContentPage
                 }, picker, goButton
             }
         };
-
-
-        //TODO: need a data getter here - should be a generic data getter       
-        //goButton.Clicked += async (sender, args) => await label.RelRotateTo(360, 1000);
     }
+
+
 }
