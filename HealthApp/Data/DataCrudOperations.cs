@@ -1,32 +1,23 @@
-﻿using HealthApp.Dtos;
-using HealthApp.Shared;
+﻿using HealthApp.Shared;
 
-namespace HealthApp.Data
+public class DataCrudOperations<T> where T : class, new()
 {
-    public class DataCrudOperations
+
+    SqlLiteConnectionFactory _connectionFactory;
+
+    public DataCrudOperations(SqlLiteConnectionFactory connectionFactory)
     {
-        private readonly SqlLiteConnectionFactory _connectionFactory;
-
-        public DataCrudOperations(SqlLiteConnectionFactory connectionFactory)
-        {
-            _connectionFactory = connectionFactory;
-        }
-
-        public async Task<object> GetDataAsync(string tableName)
-        {
-            var db = _connectionFactory.CreateConnection();
-            try
-            {
-                var dbinfo = await db.GetAsync<AppDataDto>(tableName);
-                return dbinfo;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            return null;
-        }
-
+        _connectionFactory = connectionFactory;
 
     }
+
+    public async Task<List<T>> GetAllAsync()
+    {
+        var db = _connectionFactory.CreateConnection();
+        var data = await db.Table<T>().ToListAsync();
+        return data;
+    }
+
+    // ...repeat the process for the other CRUD-related methods,
+    // in the same generic way.
 }
