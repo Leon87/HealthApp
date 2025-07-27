@@ -24,9 +24,9 @@ namespace HealthApp
             await Navigation.PushAsync(new Other());
         }
 
-        private async void AcidRecorder_Clicked(object sender, EventArgs e)
+        private async void MedicalRecorder_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Acid());
+            await Navigation.PushAsync(new Medical());
         }
 
         private async void EnterDrink_Clicked(object sender, EventArgs e)
