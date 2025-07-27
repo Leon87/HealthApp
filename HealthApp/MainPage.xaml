@@ -50,10 +50,10 @@
             
             <!--Acid-->
             <Button
-                x:Name="AcidRecorder"
-                Text="Acid / Heartburn" 
-                SemanticProperties.Hint="Records indigestion"
-                Clicked="AcidRecorder_Clicked"
+                x:Name="MedicalRecorder"
+                Text="Medical" 
+                SemanticProperties.Hint="Records any medical issues"
+                Clicked="MedicalRecorder_Clicked"
                 HorizontalOptions="Fill" />
 
             <!--Meds-->

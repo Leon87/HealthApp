@@ -14,23 +14,23 @@
         Route="MainPage" />
     <ShellContent
         Title="Food"
-        ContentTemplate="{DataTemplate local:Food}"
+        ContentTemplate="{DataTemplate csfile:Food}"
         Route="Food" />
     <ShellContent
         Title="Drink"
-        ContentTemplate="{DataTemplate local:Drink}"
+        ContentTemplate="{DataTemplate csfile:Drink}"
         Route="Drink" />
     <ShellContent
-        Title="Acid"
-        ContentTemplate="{DataTemplate local:Acid}"
-        Route="Acid" />
+        Title="Medical"
+        ContentTemplate="{DataTemplate csfile:Medical}"
+        Route="Medical" />
     <ShellContent
         Title="Poop"
-        ContentTemplate="{DataTemplate local:Poop}"
+        ContentTemplate="{DataTemplate csfile:Poop}"
         Route="Poop" />
     <ShellContent
         Title="Other"
-        ContentTemplate="{DataTemplate local:Other}"
+        ContentTemplate="{DataTemplate csfile:Other}"
         Route="Other" />
     <ShellContent
         Title="Medication"
