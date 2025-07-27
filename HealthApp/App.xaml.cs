@@ -7,11 +7,13 @@ namespace HealthApp
     public partial class App : Application
     {
         private readonly SqlLiteConnectionFactory _connectionFactory;
+        private readonly SeedingData _seedingData;
 
-        public App(SqlLiteConnectionFactory connectionFactory)
+        public App(SqlLiteConnectionFactory connectionFactory, SeedingData seedingData)
         {
             InitializeComponent();
             _connectionFactory = connectionFactory;
+            _seedingData = seedingData;
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
@@ -22,7 +24,15 @@ namespace HealthApp
         protected override async void OnStart()
         {
             ISQLiteAsyncConnection database = _connectionFactory.CreateConnection();
-            await database.CreateTableAsync<FoodDto>();
+
+            try
+            {
+                await database.GetAsync<AppDataDto>(x => true);
+            }
+            catch (Exception e)
+            {
+                await _seedingData.SeedAppData();
+            }
 
             base.OnStart();
         }

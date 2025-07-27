@@ -5,8 +5,9 @@ namespace HealthApp.Dtos
     public class AppDataDto
     {
         [PrimaryKey]
-        public string Index { get; set; }
+        public string Id { get; set; }
 
-        public List<string> Contents { get; set; }
+
+        public string Contents { get; set; }
     }
 }

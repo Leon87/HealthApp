@@ -1,4 +1,5 @@
-﻿using HealthApp.Shared;
+﻿using HealthApp.Data;
+using HealthApp.Shared;
 using Microsoft.Extensions.Logging;
 
 namespace HealthApp
@@ -22,6 +23,8 @@ namespace HealthApp
 
             builder.Services.AddSingleton<SqlLiteConnectionFactory>();
             builder.Services.AddSingleton<IAppSettings, AppSettings>();
+            builder.Services.AddSingleton<DataCrudOperations>();
+            builder.Services.AddSingleton<SeedingData>();
 
             return builder.Build();
         }
