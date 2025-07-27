@@ -1,4 +1,4 @@
-namespace HealthApp;
+namespace HealthApp.ContentPages;
 
 public class Medication : ContentPage
 {
@@ -34,7 +34,7 @@ public class Medication : ContentPage
             myGrid.AddColumnDefinition(new ColumnDefinition(howWideTheColumnIs));
         }
 
-        for (var i = 0; i < (modals.Count % 2); i++)
+        for (var i = 0; i < modals.Count % 2; i++)
         {
             myGrid.AddRowDefinition(new RowDefinition(DeviceDisplay.Current.MainDisplayInfo.Height - 60 / 4));
 

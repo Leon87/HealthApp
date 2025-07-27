@@ -1,4 +1,6 @@
-﻿namespace HealthApp
+﻿using HealthApp.ContentPages;
+
+namespace HealthApp
 {
     public partial class MainPage : ContentPage
     {
