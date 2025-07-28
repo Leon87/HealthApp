@@ -3,11 +3,11 @@
     public static class AppData
     {
         public static List<string> ContentTypes { get; } = [
-            "Acid",
             "Food",
             "Drink",
             "Medication",
             "Poop",
+            "Medical",
             "Other"];
     }
 }

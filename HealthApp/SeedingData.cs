@@ -25,47 +25,47 @@ namespace HealthApp
 
             MedicationData.Id = "Medication";
             MedicationData.Contents =
-                "Paracetamol" +
-                "Infliximab" +
-                "Codine" +
-                "Asprin" +
-                "Ant-acids" +
-                "Lanzoprazole" +
+                "Paracetamol," +
+                "Infliximab," +
+                "Codine," +
+                "Asprin," +
+                "Ant-acids," +
+                "Lanzoprazole," +
                 "Citirizine";
 
             FoodData.Id = "Food";
             FoodData.Contents =
                 "Rice" +
-                "Curry" +
-                "Chicken" +
-                "Salad";
+                ",Curry" +
+                ",Chicken" +
+                ",Salad";
 
             Medical.Id = "Medical";
             Medical.Contents =
                 "Wind" +
-                "ChestPains" +
-                "Panic" +
-                "Stomach";
+                ",ChestPains" +
+                ",Panic" +
+                ",Stomach";
 
             DrinkData.Id = "Drink";
             DrinkData.Contents =
                 "Wine" +
-                "Juice" +
-                "Water" +
-                "Tea" +
-                "IPA" +
-                "Milk" +
-                "Fizzy Pop";
+                ",Juice" +
+                ",Water" +
+                ",Tea" +
+                ",IPA" +
+                ",Milk" +
+                ",FizzyPop";
 
             PooData.Id = "Poop";
             PooData.Contents =
                 "Type 1 - Rabbit" +
-                "Type 2" +
-                "Type 3" +
-                "Type 4 - Smooth Sausage" +
-                "Type 5" +
-                "Type 6" +
-                "Type 7 - Liquid";
+                ",Type 2" +
+                ",Type 3" +
+                ",Type 4 - Smooth Sausage" +
+                ",Type 5" +
+                ",Type 6" +
+                ",Type 7 - Liquid";
 
             appDataDtos.Add(MedicationData);
             appDataDtos.Add(PooData);

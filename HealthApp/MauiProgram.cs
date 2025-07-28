@@ -23,9 +23,16 @@ namespace HealthApp
 
             builder.Services.AddSingleton<SqlLiteConnectionFactory>();
             builder.Services.AddSingleton<IAppSettings, AppSettings>();
-            builder.Services.AddSingleton<DataCrudOperations<AppDataDto>>();
-            builder.Services.AddSingleton<DataCrudOperations<FoodDto>>();
-            builder.Services.AddSingleton<SeedingData>();
+
+            builder.Services.AddTransient<SeedingData>();
+
+            builder.Services.AddTransient<DataCrudOperations<AppDataDto>>();
+            builder.Services.AddTransient<DataCrudOperations<FoodDto>>();
+            builder.Services.AddTransient<DataCrudOperations<MedicationDto>>();
+            builder.Services.AddTransient<DataCrudOperations<DrinkDto>>();
+            builder.Services.AddTransient<DataCrudOperations<MedicalDto>>();
+            builder.Services.AddTransient<DataCrudOperations<PoopDto>>();
+            builder.Services.AddTransient<DataCrudOperations<OtherDto>>();
 
             return builder.Build();
         }
