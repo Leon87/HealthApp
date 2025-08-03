@@ -30,7 +30,7 @@ public partial class AppDataContent : ContentPage
         var goButton = new Button();
         goButton.Text = "Get Default Data";
         goButton.MaximumWidthRequest = _settings.ScreenWidth / 2;
-        goButton.Clicked += async (s, e) => dataOject = await _dataCrudOperations.GetAllAsync();
+        goButton.Clicked += async (s, e) => dataOject = await _dataCrudOperations.GetAllAsync(AppData.ContentTypes[picker.SelectedIndex]);
 
         Content = new VerticalStackLayout
         {

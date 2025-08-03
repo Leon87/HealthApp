@@ -38,14 +38,43 @@ namespace HealthApp
                 "Rice" +
                 ",Curry" +
                 ",Chicken" +
-                ",Salad";
+                ",Salad" +
+                ",Fajitas" +
+                ",Burgers" +
+                ",Wedges" +
+                ",RiceCakes" +
+                ",Crisps" +
+                ",Chocolate" +
+                ",Yoghurt" +
+                ",Banana" +
+                ",Orange" +
+                ",Kiwi" +
+                ",Apple" +
+                ",Pepperami" +
+                ",Ham" +
+                ",Cheese" +
+                ",Peanuts" +
+                ",RoastDinner" +
+                ",Bolognese" +
+                ",Nachos" +
+                ",PastaBake" +
+                ",Bacon" +
+                ",Sausage" +
+                ",HashBrown" +
+                ",Tomatoes" +
+                ",DietBars" +
+                ",IceCream" +
+                ",BombayMix" +
+                ",Muffin";
 
             Medical.Id = "Medical";
             Medical.Contents =
                 "Wind" +
                 ",ChestPains" +
                 ",Panic" +
-                ",Stomach";
+                ",Stomach" +
+                ",Tiredness" +
+                ",Sickness";
 
             DrinkData.Id = "Drink";
             DrinkData.Contents =

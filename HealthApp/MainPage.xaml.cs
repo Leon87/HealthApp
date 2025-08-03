@@ -13,8 +13,9 @@ namespace HealthApp
             Routing.RegisterRoute("Other", typeof(Other));
             Routing.RegisterRoute("Medical", typeof(Medical));
             Routing.RegisterRoute("Medication", typeof(Medication));
-            Routing.RegisterRoute("Food", typeof(Food));
             Routing.RegisterRoute("Drink", typeof(Drink));
+
+            Routing.RegisterRoute("Food", typeof(Food));
 
         }
 
@@ -46,6 +47,7 @@ namespace HealthApp
         private async void EnterFood_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("Food");
+            //await Navigation.PushAsync(new Food());
         }
 
         private async void Medication_Clicked(object sender, EventArgs e)
