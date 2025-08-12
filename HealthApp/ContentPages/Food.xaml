@@ -8,44 +8,7 @@
             Text="Record your food intake!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-
-        <Grid ColumnDefinitions="Auto, Auto"
-              RowDefinitions="Auto, Auto, Auto, Auto">
-            <Button
-                Grid.Row="0"
-                Grid.Column="0"
-                Text="Curry" />
-            <Button
-                Grid.Row="0"
-                Grid.Column="1"
-                Text="Rice" />
-            <Button
-                Grid.Row="1"
-                Grid.Column="0"
-                Text="Chips" />
-            <Button
-                Grid.Row="1"
-                Grid.Column="1"
-                Text="Ham" />
-            <Button
-                Grid.Row="2"
-                Grid.Column="0"
-                Text="Salad" />
-            <Button
-                Grid.Row="2"
-                Grid.Column="1"
-                Text="Crisps" />
-            <Button
-                Grid.Row="3"
-                Grid.Column="0"
-                Text="Pepperami" />
-            <Button
-                Grid.Row="3"
-                Grid.Column="1"
-                Text="PastaBake" />
-
-        </Grid>
         
-            
+
     </VerticalStackLayout>
 </ContentPage>

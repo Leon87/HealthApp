@@ -17,9 +17,11 @@ public class DataCrudOperations<T> where T : class, new()
         var db = _connectionFactory.CreateConnection();
 
         var data = await db.Table<T>().ToListAsync();
-        //var data = await db.GetAsync<T>(dataType);
         return data;
     }
+
+
+
 
     public async Task<AppDataDto> GetAllKeysAsync(string dataType = "")
     {

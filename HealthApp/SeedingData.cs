@@ -105,6 +105,7 @@ namespace HealthApp
             ISQLiteAsyncConnection database = _connectionFactory.CreateConnection();
 
             await database.CreateTableAsync<AppDataDto>();
+            await database.CreateTableAsync<FoodDto>();
             await database.InsertAllAsync(appDataDtos);
         }
     }
