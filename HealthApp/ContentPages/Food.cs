@@ -15,7 +15,6 @@ public partial class Food : ContentPage
     {
         _connectionFactory = sqlLiteConnectionFactory;
         _dataCrudOperations = dataCrudOperations;
-        InitializeComponent();
         LoadData();
         SetPage();
     }
@@ -28,6 +27,8 @@ public partial class Food : ContentPage
 
             Foods.Add(new FoodList { Food = item });
         }
+
+
     }
 
     public class FoodList
@@ -46,6 +47,7 @@ public partial class Food : ContentPage
         // Create the ListView.
         ListView listView = new ListView
         {
+            HorizontalOptions = LayoutOptions.Center,
             // Source of data items.
             ItemsSource = Foods,
 
@@ -58,16 +60,8 @@ public partial class Food : ContentPage
                 // Create views with bindings for displaying each property.
                 Button foodButton = new Button();
                 foodButton.SetBinding(Button.TextProperty, "Food");
-
+                foodButton.WidthRequest = 230;
                 foodButton.Clicked += async (sender, args) => await AddToDiary(foodButton.Text);
-
-                /*                Label birthdayLabel = new Label();
-                                birthdayLabel.SetBinding(Label.TextProperty,
-                                    new Binding("Birthday", BindingMode.OneWay,
-                                        null, null, "Born {0:d}"));
-                */
-                BoxView boxView = new BoxView();
-                boxView.SetBinding(BoxView.ColorProperty, "FavoriteColor");
 
                 // Return an assembled ViewCell.
                 return new ViewCell
@@ -75,10 +69,11 @@ public partial class Food : ContentPage
                     View = new StackLayout
                     {
                         Padding = new Thickness(0, 5),
+                        WidthRequest = 250,
                         Orientation = StackOrientation.Horizontal,
+                        HorizontalOptions = LayoutOptions.Center,
                         Children =
                                 {
-                                    boxView,
                                     new StackLayout
                                     {
                                         VerticalOptions = LayoutOptions.Center,
@@ -98,6 +93,7 @@ public partial class Food : ContentPage
         // Build the page.
         this.Content = new StackLayout
         {
+            HorizontalOptions = LayoutOptions.Fill,
             Children =
                 {
                     header,
