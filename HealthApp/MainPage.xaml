@@ -78,6 +78,12 @@
                 Clicked="AppDataContent_Clicked"
                 HorizontalOptions="Fill" />
 
+            <Button
+                x:Name="ExportAppContent"
+                Text="ExportAppContent" 
+                SemanticProperties.Hint="Export App Content"
+                Clicked="ExportAppContent_Clicked"
+                HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
 

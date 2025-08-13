@@ -107,7 +107,8 @@ public partial class Food : ContentPage
         ISQLiteAsyncConnection database = _connectionFactory.CreateConnection();
         await database.InsertAsync(new FoodDto
         {
-            Food = text
+            Food = text,
+            Consumed = DateTime.Now
         });
 
         await DisplayAlert("Info recorded", $"Your food \"{text}\" has been recorded", "OK");
