@@ -79,6 +79,19 @@ namespace HealthApp
             using FileStream outputStream = File.OpenWrite(targetFile);
             using StreamWriter streamWriter = new StreamWriter(outputStream);
             await streamWriter.WriteAsync(JsonConvert.SerializeObject(eatenFoods));
+
+            string subject = "Food Eaten DB!";
+            string[] recipients = new[] { "leonbooth@live.co.uk" };
+
+            var message = new EmailMessage
+            {
+                Subject = subject,
+                Body = JsonConvert.SerializeObject(eatenFoods),
+                BodyFormat = EmailBodyFormat.PlainText,
+                To = new List<string>(recipients)
+            };
+
+            await Email.Default.ComposeAsync(message);
         }
     }
 
