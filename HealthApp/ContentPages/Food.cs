@@ -15,20 +15,68 @@ public partial class Food : ContentPage
     {
         _connectionFactory = sqlLiteConnectionFactory;
         _dataCrudOperations = dataCrudOperations;
-        LoadData();
-        SetPage();
+        ChooseFoodObject();
     }
 
-    private async void LoadData()
+    private async void ChooseFoodObject()
     {
-        var items = await _dataCrudOperations.GetAllKeysAsync("Food");
-        foreach (var item in items.Contents.Split(","))
+        var option1 = new Button { Text = "Breakfast" };
+        option1.Clicked += async (s, e) =>
         {
+            var breakfastItems = await _dataCrudOperations.GetAllKeysAsync("Breakfast");
+            foreach (var item in breakfastItems.Contents.Split(","))
+            {
+                Foods.Add(new FoodList { Food = item });
+            }
+            SetPage();
+        };
 
-            Foods.Add(new FoodList { Food = item });
-        }
+        var option2 = new Button { Text = "Lunch" };
+        option2.Clicked += async (s, e) =>
+        {
+            var lunchItems = await _dataCrudOperations.GetAllKeysAsync("Lunch");
+            foreach (var item in lunchItems.Contents.Split(","))
+            {
+                Foods.Add(new FoodList { Food = item });
+            }
+            SetPage();
+        };
 
+        var option3 = new Button { Text = "Dinner" };
+        option3.Clicked += async (s, e) =>
+        {
+            var dinnerItems = await _dataCrudOperations.GetAllKeysAsync("Dinner");
+            foreach (var item in dinnerItems.Contents.Split(","))
+            {
+                Foods.Add(new FoodList { Food = item });
+            }
+            SetPage();
+        };
+        var option4 = new Button { Text = "Sweet Snacks" };
+        option4.Clicked += async (s, e) =>
+        {
+            var sweetSnackItems = await _dataCrudOperations.GetAllKeysAsync("SweetSnacks");
+            foreach (var item in sweetSnackItems.Contents.Split(","))
+            {
+                Foods.Add(new FoodList { Food = item });
+            }
+            SetPage();
+        };
+        var option5 = new Button { Text = "Savory Snacks" };
+        option5.Clicked += async (s, e) =>
+        {
+            var savorySnackItems = await _dataCrudOperations.GetAllKeysAsync("SavorySnacks");
+            foreach (var item in savorySnackItems.Contents.Split(","))
+            {
+                Foods.Add(new FoodList { Food = item });
+            }
+            SetPage();
+        };
 
+        Content = new VerticalStackLayout
+        {
+            Children = { option1, option2, option3, option4, option5 }
+        };
     }
 
     public class FoodList
@@ -40,7 +88,8 @@ public partial class Food : ContentPage
     {
         Label header = new Label
         {
-            Text = "ListView",
+
+            Text = "Food Selection",
             HorizontalOptions = LayoutOptions.Center
         };
 

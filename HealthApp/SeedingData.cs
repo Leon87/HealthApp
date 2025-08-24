@@ -17,11 +17,20 @@ namespace HealthApp
 
         public async Task SeedAppData()
         {
+            AppDataDto DbUpdate = new AppDataDto();
             AppDataDto MedicationData = new AppDataDto();
             AppDataDto FoodData = new AppDataDto();
             AppDataDto Medical = new AppDataDto();
             AppDataDto DrinkData = new AppDataDto();
             AppDataDto PooData = new AppDataDto();
+            AppDataDto BreakfastData = new AppDataDto();
+            AppDataDto LunchData = new AppDataDto();
+            AppDataDto DinnerData = new AppDataDto();
+            AppDataDto SweetSnacksData = new AppDataDto();
+            AppDataDto SavorySnacksData = new AppDataDto();
+
+            DbUpdate.Id = "DbUpdate";
+            DbUpdate.Contents = "20250824";
 
             MedicationData.Id = "Medication";
             MedicationData.Contents =
@@ -32,6 +41,57 @@ namespace HealthApp
                 "Ant-acids," +
                 "Lanzoprazole," +
                 "Citirizine";
+
+            BreakfastData.Id = "Breakfast";
+            BreakfastData.Contents =
+                "Porridge" +
+                ",Eggs" +
+                ",Bacon" +
+                ",Sausage" +
+                ",Toast" +
+                ",Cereal" +
+                ",Fruit" +
+                ",Yoghurt";
+
+            LunchData.Id = "Lunch";
+            LunchData.Contents =
+                "Sandwich" +
+                ",Soup" +
+                ",Salad" +
+                ",Pasta" +
+                ",Rice" +
+                ",Wraps" +
+                ",Burgers" +
+                ",Fries";
+
+            DinnerData.Id = "Dinner";
+            DinnerData.Contents =
+                "Rice" +
+                ",Curry" +
+                ",Chicken" +
+                ",Salad" +
+                ",Fajitas" +
+                ",Burgers" +
+                ",Wedges" +
+                ",RoastDinner" +
+                ",Bolognese" +
+                ",Nachos" +
+                ",PastaBake";
+
+            SweetSnacksData.Id = "SweetSnacks";
+            SweetSnacksData.Contents =
+                "Chocolate" +
+                ",DietBars" +
+                ",IceCream" +
+                ",Cookie";
+
+            SavorySnacksData.Id = "SavorySnacks";
+            SavorySnacksData.Contents =
+                "RiceCakes" +
+                ",Crisps" +
+                ",BombayMix" +
+                ",Muffin";
+
 
             FoodData.Id = "Food";
             FoodData.Contents =
@@ -101,6 +161,12 @@ namespace HealthApp
             appDataDtos.Add(DrinkData);
             appDataDtos.Add(FoodData);
             appDataDtos.Add(Medical);
+            appDataDtos.Add(DbUpdate);
+            appDataDtos.Add(BreakfastData);
+            appDataDtos.Add(LunchData);
+            appDataDtos.Add(DinnerData);
+            appDataDtos.Add(SweetSnacksData);
+            appDataDtos.Add(SavorySnacksData);
 
             ISQLiteAsyncConnection database = _connectionFactory.CreateConnection();
 
