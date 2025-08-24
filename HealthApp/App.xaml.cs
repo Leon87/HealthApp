@@ -29,7 +29,7 @@ namespace HealthApp
             {
                 await database.GetAsync<AppDataDto>(x => true);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 await _seedingData.SeedAppData();
             }

@@ -39,7 +39,7 @@
                 SemanticProperties.Hint="Takes count of liquids"
                 Clicked="EnterDrink_Clicked"
                 HorizontalOptions="Fill" />
-            
+            <!---->
             <!--Toilet-->
             <Button
                 x:Name="StoolType"
@@ -70,7 +70,20 @@
                 SemanticProperties.Hint="Something I want to record"
                 Clicked="Other_Clicked"
                 HorizontalOptions="Fill" />
-            
+
+            <Button
+                x:Name="AppDataContent"
+                Text="AppDataContent" 
+                SemanticProperties.Hint="Goto App Data Content"
+                Clicked="AppDataContent_Clicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="ExportAppContent"
+                Text="ExportAppContent" 
+                SemanticProperties.Hint="Export App Content"
+                Clicked="ExportAppContent_Clicked"
+                HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
 

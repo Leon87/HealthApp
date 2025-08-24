@@ -1,15 +1,16 @@
-using HealthApp.Data;
+using HealthApp.Dtos;
 using HealthApp.Models;
 using HealthApp.Shared;
 
 namespace HealthApp.ContentPages;
 
-public class AppDataContent : ContentPage
+public partial class AppDataContent : ContentPage
 {
     private readonly IAppSettings _settings;
     private readonly SqlLiteConnectionFactory _connectionFactory;
-    private readonly DataCrudOperations _dataCrudOperations;
-    public AppDataContent(IAppSettings settings, SqlLiteConnectionFactory connectionFactory, DataCrudOperations dataCrudOperations)
+    private readonly DataCrudOperations<AppDataDto> _dataCrudOperations;
+
+    public AppDataContent(IAppSettings settings, SqlLiteConnectionFactory connectionFactory, DataCrudOperations<AppDataDto> dataCrudOperations)
     {
         _settings = settings;
         _connectionFactory = connectionFactory;
@@ -29,7 +30,7 @@ public class AppDataContent : ContentPage
         var goButton = new Button();
         goButton.Text = "Get Default Data";
         goButton.MaximumWidthRequest = _settings.ScreenWidth / 2;
-        goButton.Clicked += async (s, e) => dataOject = await dataCrudOperations.GetDataAsync(picker.SelectedItem.ToString()!);
+        goButton.Clicked += async (s, e) => dataOject = await _dataCrudOperations.GetAllAsync(AppData.ContentTypes[picker.SelectedIndex]);
 
         Content = new VerticalStackLayout
         {
@@ -38,9 +39,7 @@ public class AppDataContent : ContentPage
                 }, picker, goButton
             }
         };
-
-
-        //TODO: need a data getter here - should be a generic data getter       
-        //goButton.Clicked += async (sender, args) => await label.RelRotateTo(360, 1000);
     }
+
+
 }

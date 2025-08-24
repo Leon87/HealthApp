@@ -6,8 +6,6 @@ namespace HealthApp.Dtos
     {
         [PrimaryKey]
         public string Id { get; set; }
-
-
         public string Contents { get; set; }
     }
 }

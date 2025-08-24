@@ -4,6 +4,8 @@ public class Medication : ContentPage
 {
     public Medication()
     {
+
+
         var myGrid = new Grid();
         myGrid.HorizontalOptions = LayoutOptions.Center;
         var columnSize = 2;
