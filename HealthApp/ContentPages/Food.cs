@@ -23,60 +23,51 @@ public partial class Food : ContentPage
         var option1 = new Button { Text = "Breakfast" };
         option1.Clicked += async (s, e) =>
         {
-            var breakfastItems = await _dataCrudOperations.GetAllKeysAsync("Breakfast");
-            foreach (var item in breakfastItems.Contents.Split(","))
-            {
-                Foods.Add(new FoodList { Food = item });
-            }
+            await SetFoods("Breakfast");
             SetPage();
         };
 
         var option2 = new Button { Text = "Lunch" };
         option2.Clicked += async (s, e) =>
         {
-            var lunchItems = await _dataCrudOperations.GetAllKeysAsync("Lunch");
-            foreach (var item in lunchItems.Contents.Split(","))
-            {
-                Foods.Add(new FoodList { Food = item });
-            }
+            await SetFoods("Lunch");
             SetPage();
         };
 
         var option3 = new Button { Text = "Dinner" };
         option3.Clicked += async (s, e) =>
         {
-            var dinnerItems = await _dataCrudOperations.GetAllKeysAsync("Dinner");
-            foreach (var item in dinnerItems.Contents.Split(","))
-            {
-                Foods.Add(new FoodList { Food = item });
-            }
+            await SetFoods("Dinner");
             SetPage();
         };
+
         var option4 = new Button { Text = "Sweet Snacks" };
         option4.Clicked += async (s, e) =>
         {
-            var sweetSnackItems = await _dataCrudOperations.GetAllKeysAsync("SweetSnacks");
-            foreach (var item in sweetSnackItems.Contents.Split(","))
-            {
-                Foods.Add(new FoodList { Food = item });
-            }
+            await SetFoods("SweetSnacks");
             SetPage();
         };
         var option5 = new Button { Text = "Savory Snacks" };
         option5.Clicked += async (s, e) =>
         {
-            var savorySnackItems = await _dataCrudOperations.GetAllKeysAsync("SavorySnacks");
-            foreach (var item in savorySnackItems.Contents.Split(","))
-            {
-                Foods.Add(new FoodList { Food = item });
-            }
+            await SetFoods("SavorySnacks");
             SetPage();
         };
 
         Content = new VerticalStackLayout
         {
+            Padding = 50,
             Children = { option1, option2, option3, option4, option5 }
         };
+    }
+
+    private async Task SetFoods(string foodKey)
+    {
+        var items = await _dataCrudOperations.GetAllKeysAsync(foodKey);
+        foreach (var item in items.Contents.Split(","))
+        {
+            Foods.Add(new FoodList { Food = item });
+        }
     }
 
     public class FoodList
