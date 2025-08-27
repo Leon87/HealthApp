@@ -15,20 +15,59 @@ public partial class Food : ContentPage
     {
         _connectionFactory = sqlLiteConnectionFactory;
         _dataCrudOperations = dataCrudOperations;
-        LoadData();
-        SetPage();
+        ChooseFoodObject();
     }
 
-    private async void LoadData()
+    private async void ChooseFoodObject()
     {
-        var items = await _dataCrudOperations.GetAllKeysAsync("Food");
+        var option1 = new Button { Text = "Breakfast" };
+        option1.Clicked += async (s, e) =>
+        {
+            await SetFoods("Breakfast");
+            SetPage();
+        };
+
+        var option2 = new Button { Text = "Lunch" };
+        option2.Clicked += async (s, e) =>
+        {
+            await SetFoods("Lunch");
+            SetPage();
+        };
+
+        var option3 = new Button { Text = "Dinner" };
+        option3.Clicked += async (s, e) =>
+        {
+            await SetFoods("Dinner");
+            SetPage();
+        };
+
+        var option4 = new Button { Text = "Sweet Snacks" };
+        option4.Clicked += async (s, e) =>
+        {
+            await SetFoods("SweetSnacks");
+            SetPage();
+        };
+        var option5 = new Button { Text = "Savory Snacks" };
+        option5.Clicked += async (s, e) =>
+        {
+            await SetFoods("SavorySnacks");
+            SetPage();
+        };
+
+        Content = new VerticalStackLayout
+        {
+            Padding = 50,
+            Children = { option1, option2, option3, option4, option5 }
+        };
+    }
+
+    private async Task SetFoods(string foodKey)
+    {
+        var items = await _dataCrudOperations.GetAllKeysAsync(foodKey);
         foreach (var item in items.Contents.Split(","))
         {
-
             Foods.Add(new FoodList { Food = item });
         }
-
-
     }
 
     public class FoodList
@@ -40,7 +79,8 @@ public partial class Food : ContentPage
     {
         Label header = new Label
         {
-            Text = "ListView",
+
+            Text = "Food Selection",
             HorizontalOptions = LayoutOptions.Center
         };
 

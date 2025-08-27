@@ -27,7 +27,16 @@ namespace HealthApp
 
             try
             {
-                await database.GetAsync<AppDataDto>(x => true);
+                var data = await database.Table<AppDataDto>().ToListAsync();
+
+                var updateDateTime = data.Where(x => x.Id == "DbUpdate").First();
+
+                if (updateDateTime.Contents != "20250824")
+                {
+                    await database.DropTableAsync<AppDataDto>();
+                    await _seedingData.SeedAppData();
+                }
+
             }
             catch (Exception)
             {
